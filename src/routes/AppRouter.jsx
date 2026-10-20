@@ -1,5 +1,6 @@
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 import Dashboard from "../pages/dashboard/Dashboard";
 import Appointment from "../pages/appointment/Appointment";
 import Clinic from "../pages/clinic";
@@ -14,39 +15,79 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route
+          path="/"
+          element={<Navigate to="/dashboard" replace />}
+        />
 
-        <Route path="/dashboard" element={<Dashboard />} />
+        {/* Dashboard already has Layout */}
         <Route
-          path="/marketplace"
-          element={<Layout><MarketPlace /></Layout>}
+          path="/dashboard"
+          element={<Dashboard />}
         />
-        <Route
-          path="/pharmacy"
-          element={<Layout><PharmacyPlace /></Layout>}
-        />
+
+        {/* Pages that already have Layout */}
         <Route
           path="/appointment"
-          element={<Layout><Appointment /></Layout>}
-        />
-        <Route
-          path="/findhospital"
-          element={<Layout><Clinic /></Layout>}
-        />
-        <Route
-          path="/chat"
-          element={<Layout><Chat /></Layout>}
-        />
-        <Route
-          path="/searchdoctor"
-          element={<Layout><Patients /></Layout>}
-        />
-        <Route
-          path="/settings"
-          element={<Layout><Settings /></Layout>}
+          element={<Appointment />}
         />
 
-        <Route path="*" element={<Navigate to="/dashboard" replace />} />
+        <Route
+          path="/chat"
+          element={<Chat />}
+        />
+
+        {/* Pages using Layout here */}
+        <Route
+          path="/marketplace"
+          element={
+            <Layout>
+              <MarketPlace />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/pharmacy"
+          element={
+            <Layout>
+              <PharmacyPlace />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/findhospital"
+          element={
+            <Layout>
+              <Clinic />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/searchdoctor"
+          element={
+            <Layout>
+              <Patients />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/settings"
+          element={
+            <Layout>
+              <Settings />
+            </Layout>
+          }
+        />
+
+        {/* Redirect unknown routes */}
+        <Route
+          path="*"
+          element={<Navigate to="/dashboard" replace />}
+        />
       </Routes>
     </BrowserRouter>
   );
