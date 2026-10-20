@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "../pages/dashboard/Dashboard";
 import Appointment from "../pages/appointment/Appointment";
@@ -7,28 +8,45 @@ import Patients from "../pages/patients/Patients";
 import Settings from "../pages/settings/Settings";
 import MarketPlace from "../pages/marketPlace";
 import PharmacyPlace from "../pages/pharmacy/PharmacyPlace";
-
+import Layout from "../components/layouts/Layout";
 
 function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Default route */}
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
-        {/* Main routes */}
+
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/marketplace" element={<MarketPlace />} />
-        <Route path="/pharmacy" element={<PharmacyPlace />} />
-        <Route path="/appointment" element={<Appointment />} />
-        <Route path="/findhospital" element={<Clinic />} />
-        <Route path="/chat" element={<Chat />} />
-        <Route path="/searchdoctor" element={<Patients />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route
+          path="/marketplace"
+          element={<Layout><MarketPlace /></Layout>}
+        />
+        <Route
+          path="/pharmacy"
+          element={<Layout><PharmacyPlace /></Layout>}
+        />
+        <Route
+          path="/appointment"
+          element={<Layout><Appointment /></Layout>}
+        />
+        <Route
+          path="/findhospital"
+          element={<Layout><Clinic /></Layout>}
+        />
+        <Route
+          path="/chat"
+          element={<Layout><Chat /></Layout>}
+        />
+        <Route
+          path="/searchdoctor"
+          element={<Layout><Patients /></Layout>}
+        />
+        <Route
+          path="/settings"
+          element={<Layout><Settings /></Layout>}
+        />
 
-
-        {/* 404 - any unknown route */}
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
-
       </Routes>
     </BrowserRouter>
   );
