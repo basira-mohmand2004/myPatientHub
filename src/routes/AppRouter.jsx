@@ -5,6 +5,8 @@ import Clinic from "../pages/clinic";
 import Chat from "../pages/chat/Chat";
 import Patients from "../pages/patients/Patients";
 import Settings from "../pages/settings/Settings";
+import MarketPlace from "../pages/marketPlace";
+import PharmacyPlace from "../pages/pharmacy/PharmacyPlace";
 
 
 function AppRouter() {
@@ -15,6 +17,8 @@ function AppRouter() {
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         {/* Main routes */}
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/marketplace" element={<MarketPlace />} />
+        <Route path="/pharmacy" element={<PharmacyPlace />} />
         <Route path="/appointment" element={<Appointment />} />
         <Route path="/findhospital" element={<Clinic />} />
         <Route path="/chat" element={<Chat />} />
