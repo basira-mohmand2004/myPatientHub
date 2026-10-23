@@ -1,10 +1,7 @@
+import FindClinic from "./FindClinic";
 
 const Clinic = () => {
-    return (
-        <div>
-            Clinic
-        </div>
-    )
-}
+  return <FindClinic />;
+};
 
-export default Clinic
+export default Clinic;
