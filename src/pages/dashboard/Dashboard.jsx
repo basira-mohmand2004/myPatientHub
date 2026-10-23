@@ -759,8 +759,7 @@ function SparkCard({
       className={`
         ${CARD}
         flex
-        h-[120px]
-        min-w-0
+min-h-[160px]        min-w-0
         flex-col
         overflow-hidden
         overflow-hidden
@@ -805,8 +804,7 @@ function SparkCard({
       </div>
 
 
-      <div className="mt-auto h-[130px]">
-
+<div className="mt-auto h-[90px]">
         <ResponsiveContainer
           width="100%"
           height="100%"
@@ -883,8 +881,7 @@ function ChartCard({
     <section
       className={`
         ${CARD}
-        h-[300px]
-        min-w-0
+min-h-[320px]        min-w-0
         overflow-hidden
         p-4
       `}
@@ -1438,8 +1435,8 @@ export default function Dashboard() {
           className="
             mb-6
             px-1
-            text-[30px]
-            font-bold
+text-2xl
+sm:text-[30px]            font-bold
             leading-tight
             text-[#344767]
           "
@@ -1456,13 +1453,14 @@ export default function Dashboard() {
           ================================================= */}
 
           <div
-            className="
-              grid
-              min-w-0
-              grid-cols-2
-              gap-4
-            "
-          >
+  className="
+    grid
+    min-w-0
+    grid-cols-1
+    gap-4
+    sm:grid-cols-2
+  "
+>
 
             <DonutCard
               title="Promotion by Clinics"
@@ -1484,14 +1482,15 @@ export default function Dashboard() {
               SMART MARKET / HEALTH
           ================================================= */}
 
-          <div
-            className="
-              grid
-              min-w-0
-              grid-cols-[1.25fr_0.85fr]
-              gap-4
-            "
-          >
+         <div
+  className="
+    grid
+    min-w-0
+    grid-cols-1
+    gap-4
+    lg:grid-cols-[1.25fr_0.85fr]
+  "
+>
 
             <DonutCard
               title="Smart Market Usage by app"
@@ -1501,12 +1500,14 @@ export default function Dashboard() {
 
 
             <div
-              className="
-                grid
-                min-w-0
-                grid-cols-1
-                gap-4
-              "
+             className="
+  grid
+  min-w-0
+  grid-cols-1
+  gap-4
+  sm:grid-cols-2
+  lg:grid-cols-1
+"
             >
 
               <SparkCard
@@ -1530,15 +1531,15 @@ export default function Dashboard() {
           {/* =================================================
               CHRONIC WELLNESS / APPOINTMENT
           ================================================= */}
-
-          <div
-            className="
-              grid
-              min-w-0
-              grid-cols-2
-              gap-4
-            "
-          >
+<div
+  className="
+    grid
+    min-w-0
+    grid-cols-1
+    gap-4
+    lg:grid-cols-2
+  "
+>
 
             <ChartCard
               title="Chronic wellness Tracker"
@@ -1558,7 +1559,7 @@ export default function Dashboard() {
 
                   <RadarChart
                     data={radarData}
-                    outerRadius="68%"
+                    outerRadius="60%"
                     margin={{
                       top: 10,
                       right: 15,
@@ -1839,7 +1840,8 @@ export default function Dashboard() {
             className="
               grid
               min-w-0
-              grid-cols-[1fr_0.92fr]
+             grid-cols-1
+lg:grid-cols-[1fr_0.92fr]
               items-stretch
               gap-4
             "
