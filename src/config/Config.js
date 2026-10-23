@@ -47,7 +47,7 @@ export const mainMenu = [
   {
     title: "Find Pharmacy",
     icon: Pill,
-    path: "/findpharmacy",
+    path: "/pharmacy",
   },
   {
     title: "My Dependents",

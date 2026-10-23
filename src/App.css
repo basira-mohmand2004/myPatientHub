@@ -182,3 +182,416 @@
     border-right-color: var(--border);
   }
 }
+
+
+
+
+
+
+/* Sadaf - Marketplace page */
+
+.marketplace-page {
+  min-height: 100vh;
+  padding: 28px;
+  background: #f7f8fc;
+  color: #394967;
+  font-family: Arial, sans-serif;
+}
+
+.marketplace-header {
+  max-width: 1200px;
+  margin: 0 auto 28px;
+}
+
+.marketplace-header h1 {
+  margin: 12px 0 20px;
+  font-size: 28px;
+}
+
+.breadcrumb {
+  color: #7c8498;
+  font-size: 16px;
+}
+
+.marketplace-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.marketplace-toolbar input {
+  width: min(100%, 420px);
+  padding: 15px 18px;
+  border: 1px solid #d6d9e2;
+  border-radius: 12px;
+  background: white;
+  font-size: 16px;
+}
+
+.toolbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 21px;
+}
+
+.marketplace-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 8px 35px rgba(38, 51, 77, 0.06);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.section-heading h2,
+.results-section h2 {
+  font-size: 25px;
+  line-height: 1.4;
+}
+
+.section-heading p {
+  color: #788198;
+}
+
+.cart-count {
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #fff0fa;
+  color: #c81791;
+  white-space: nowrap;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  overflow: hidden;
+  border: 1px solid #edf0f5;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 8px 25px rgba(38, 51, 77, 0.07);
+}
+
+.product-image {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  background: #f1f3f7;
+}
+
+.product-details {
+  padding: 22px;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.product-price strong {
+  color: #35b8d4;
+  font-size: 23px;
+  white-space: nowrap;
+}
+
+.product-details h3 {
+  margin: 12px 0;
+  font-size: 22px;
+}
+
+.product-details h4 {
+  margin: 8px 0;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.product-details p {
+  color: #788198;
+  line-height: 1.7;
+}
+
+.marketplace-page .buy-button {
+  margin-top: 12px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+  background: #222222;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.marketplace-page .buy-button:hover {
+  filter: brightness(0.94);
+  transform: translateY(-1px);
+}
+
+.results-section {
+  margin-top: 42px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 22px;
+}
+
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  padding: 18px 14px;
+  border-bottom: 1px solid #e7eaf0;
+  white-space: nowrap;
+}
+
+.table-wrapper th {
+  color: #9aa4b8;
+  font-size: 13px;
+}
+
+.empty-message {
+  padding: 24px 0;
+  color: #788198;
+}
+
+@media (max-width: 700px) {
+  .marketplace-page {
+    padding: 14px;
+  }
+
+  .marketplace-content {
+    padding: 18px;
+  }
+
+  .marketplace-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .marketplace-toolbar input {
+    width: 100%;
+  }
+
+  .toolbar-icons {
+    gap: 18px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .section-heading h2,
+  .results-section h2 {
+    font-size: 21px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-image {
+    height: 210px;
+  }
+}
+
+
+
+/* Sadaf - Pharmacy page */
+.pharmacy-page {
+  min-height: 100vh;
+  padding: 28px;
+  background: #f7f8fc;
+  color: #394967;
+  font-family: Arial, sans-serif;
+}
+
+.pharmacy-header,
+.pharmacy-content,
+.pharmacy-results {
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  padding: 28px;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 8px 35px rgba(38, 51, 77, 0.06);
+}
+
+.pharmacy-breadcrumb {
+  margin-bottom: 12px;
+  color: #7c8498;
+  font-size: 16px;
+}
+
+.pharmacy-header h1 {
+  margin: 12px 0 20px;
+  font-size: 28px;
+}
+
+.pharmacy-search,
+.pharmacy-table-search {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px 18px;
+  border: 1px solid #d6d9e2;
+  border-radius: 12px;
+  font-size: 16px;
+  background: white;
+  color: #394967;
+}
+
+.pharmacy-content h2,
+.pharmacy-results h2 {
+  margin-bottom: 28px;
+  font-size: 25px;
+  line-height: 1.4;
+}
+
+.medicine-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.medicine-card {
+  overflow: hidden;
+  padding: 22px;
+  border: 1px solid #edf0f5;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 8px 25px rgba(38, 51, 77, 0.07);
+}
+
+.medicine-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  border-radius: 16px;
+  background: #f1f3f7;
+}
+
+.medicine-image span {
+  font-size: 70px;
+}
+
+.medicine-info {
+  padding-top: 18px;
+}
+
+.medicine-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.medicine-price-row h3 {
+  font-size: 21px;
+}
+
+.medicine-price-row span {
+  color: #24b7d4;
+  font-size: 22px;
+}
+
+.medicine-category,
+.medicine-info p {
+  color: #788198;
+  line-height: 1.7;
+}
+
+.pharmacy-name {
+  margin-top: 16px;
+  font-size: 22px;
+}
+
+
+.pharmacy-buy-button {
+  margin-top: 12px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+  background: #222222;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.pharmacy-buy-button:hover {
+  background: #444444;
+}
+
+
+.pharmacy-buy-button:hover {
+  filter: brightness(0.95);
+}
+
+.pharmacy-results {
+  margin-top: 32px;
+}
+
+.pharmacy-table-search {
+  margin-bottom: 20px;
+}
+
+.pharmacy-table-wrapper {
+  overflow-x: auto;
+}
+
+.pharmacy-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.pharmacy-table th,
+.pharmacy-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #e7e9ef;
+}
+
+.pharmacy-table th {
+  color: #929bb0;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .pharmacy-page {
+    padding: 14px;
+  }
+
+  .pharmacy-header,
+  .pharmacy-content,
+  .pharmacy-results {
+    padding: 18px;
+  }
+
+  .medicine-grid {
+    grid-template-columns: 1fr;
+  }
+}
