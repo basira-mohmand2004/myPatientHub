@@ -9,28 +9,28 @@ const Layout = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   const toggleMobilSidebar = () => {
-    setIsMobile(!isMobile);
+    setIsMobile((prev) => !prev);
   };
 
   const toggleSidebar = () => {
-    setCollapsed(!collapsed);
+    setCollapsed((prev) => !prev);
   };
 
   return (
-    <div className="flex min-h-screen w-full bg-gray-100">
+    <div className="flex min-h-screen w-full max-w-full overflow-x-clip bg-gray-100">
       <Sidebar
         collapsed={collapsed}
         isMobile={isMobile}
         setIsMobile={setIsMobile}
       />
 
-      <main className="flex-1 p-8 md:p-6 flex flex-col">
+      <main className="flex min-w-0 max-w-full flex-1 flex-col p-3 sm:p-4 md:p-6">
         <Header
           toggleSidebar={toggleSidebar}
           toggleMobilSidebar={toggleMobilSidebar}
         />
 
-        <div className="flex-1">
+        <div className="w-full min-w-0 max-w-full flex-1">
           {children}
         </div>
 

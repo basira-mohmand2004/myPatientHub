@@ -26,7 +26,7 @@ import Layout from "../../components/layouts/Layout";
 
 
 /* =========================================================
-   THEME
+   رنگ‌ها و تنظیمات ظاهری
 ========================================================= */
 
 const COLORS = {
@@ -52,7 +52,7 @@ const COLORS = {
 
 
 /* =========================================================
-   CARD / BUTTON
+   استایل کارت‌ها و دکمه‌ها
 ========================================================= */
 
 const CARD =
@@ -63,7 +63,7 @@ const BUTTON =
 
 
 /* =========================================================
-   IMAGES
+   تصاویر پزشکان
 ========================================================= */
 
 const doctorPhotos = {
@@ -82,7 +82,7 @@ const doctorPhotos = {
 
 
 /* =========================================================
-   DATA
+   داده‌های مورد استفاده در داشبورد
 ========================================================= */
 
 const clinics = [
@@ -328,7 +328,7 @@ const doctors = [
 
 
 /* =========================================================
-   SMALL COMPONENTS
+   کامپوننت‌های کوچک و مشترک
 ========================================================= */
 
 function InfoButton() {
@@ -414,7 +414,7 @@ function Kebab() {
 
 
 /* =========================================================
-   PROMOTION LOGOS
+   لوگوهای بخش تبلیغات
 ========================================================= */
 
 function Logo({ type }) {
@@ -542,7 +542,7 @@ function Logo({ type }) {
 
 
 /* =========================================================
-   DONUT CHART
+   نمودار حلقه‌ای
 ========================================================= */
 
 function Donut({ data, size = 210 }) {
@@ -604,7 +604,7 @@ function Donut({ data, size = 210 }) {
 
 
 /* =========================================================
-   PROMOTION / MARKET CARDS
+   کارت‌های تبلیغات و بازار
 ========================================================= */
 
 function DonutCard({
@@ -617,7 +617,10 @@ function DonutCard({
       className={`
         ${CARD}
         flex
-        h-[300px]
+        h-auto
+        min-h-[300px]
+        w-full
+        max-w-full
         min-w-0
         flex-col
         p-4
@@ -651,7 +654,8 @@ function DonutCard({
           grid
           min-w-0
           flex-1
-          grid-cols-[125px_minmax(0,1fr)]
+          grid-cols-[90px_minmax(0,1fr)]
+          sm:grid-cols-[125px_minmax(0,1fr)]
           items-center
           gap-4
         "
@@ -693,8 +697,10 @@ function DonutCard({
               className={`
                 flex
                 min-w-0
+                flex-wrap
                 items-center
                 gap-2
+                sm:flex-nowrap
                 py-1
                 ${
                   index !== items.length - 1
@@ -711,6 +717,7 @@ function DonutCard({
                   min-w-0
                   flex-1
                   break-words
+                  [overflow-wrap:anywhere]
                   text-[12px]
                   font-semibold
                   leading-4
@@ -743,7 +750,7 @@ function DonutCard({
 
 
 /* =========================================================
-   HEALTH INDEX / SYMPTOMS
+   کارت‌های شاخص سلامت و علائم
 ========================================================= */
 
 function SparkCard({
@@ -759,7 +766,7 @@ function SparkCard({
       className={`
         ${CARD}
         flex
-min-h-[160px]        min-w-0
+min-h-[160px] min-w-0
         flex-col
         overflow-hidden
         overflow-hidden
@@ -870,7 +877,7 @@ min-h-[160px]        min-w-0
 
 
 /* =========================================================
-   CHART CARD
+   کارت نمودار
 ========================================================= */
 
 function ChartCard({
@@ -881,7 +888,7 @@ function ChartCard({
     <section
       className={`
         ${CARD}
-min-h-[320px]        min-w-0
+min-h-[320px] min-w-0
         overflow-hidden
         p-4
       `}
@@ -920,7 +927,7 @@ min-h-[320px]        min-w-0
 
 
 /* =========================================================
-   APPOINTMENT LIST
+   فهرست نوبت‌ها
 ========================================================= */
 
 function AppointmentList({
@@ -1110,7 +1117,7 @@ function AppointmentList({
 
 
 /* =========================================================
-   MAP
+   نقشه
 ========================================================= */
 
 function MapCard() {
@@ -1260,7 +1267,7 @@ function MapCard() {
 
 
 /* =========================================================
-   DOCTORS
+   بخش پزشکان
 ========================================================= */
 
 function Field({
@@ -1339,10 +1346,12 @@ function DoctorsCard() {
             key={doctor.name}
             className="
               grid
+              w-full
               min-w-0
-              grid-cols-[70px_1.2fr_1.2fr_0.9fr_0.55fr]
+              grid-cols-1
               items-center
               gap-3
+              sm:grid-cols-[70px_minmax(0,1.2fr)_minmax(0,1.2fr)_minmax(0,0.9fr)_minmax(0,0.55fr)]
               border-t
               border-slate-100
               px-5
@@ -1402,7 +1411,7 @@ function DoctorsCard() {
 
 
 /* =========================================================
-   DASHBOARD
+   صفحهٔ داشبورد
 ========================================================= */
 
 export default function Dashboard() {
@@ -1413,9 +1422,12 @@ export default function Dashboard() {
 
       <main
         className="
+          box-border
           min-h-screen
           w-full
           min-w-0
+          max-w-full
+          overflow-x-clip
           bg-[#f8f9fa]
           px-0
           py-0
@@ -1428,7 +1440,7 @@ export default function Dashboard() {
       >
 
         {/* =================================================
-            WELCOME
+            بخش خوشامدگویی
         ================================================= */}
 
         <h1
@@ -1436,7 +1448,8 @@ export default function Dashboard() {
             mb-6
             px-1
 text-2xl
-sm:text-[30px]            font-bold
+            font-bold
+            sm:text-[30px]
             leading-tight
             text-[#344767]
           "
@@ -1445,17 +1458,19 @@ sm:text-[30px]            font-bold
         </h1>
 
 
-        <div className="space-y-4">
+        <div className="w-full min-w-0 max-w-full space-y-4">
 
 
           {/* =================================================
-              PROMOTION BY CLINICS / PHARMACIES
+              تبلیغات کلینیک‌ها و داروخانه‌ها
           ================================================= */}
 
           <div
   className="
     grid
+    w-full
     min-w-0
+    max-w-full
     grid-cols-1
     gap-4
     sm:grid-cols-2
@@ -1479,13 +1494,15 @@ sm:text-[30px]            font-bold
 
 
           {/* =================================================
-              SMART MARKET / HEALTH
+              بازار هوشمند و سلامت
           ================================================= */}
 
          <div
   className="
     grid
+    w-full
     min-w-0
+    max-w-full
     grid-cols-1
     gap-4
     lg:grid-cols-[1.25fr_0.85fr]
@@ -1502,7 +1519,9 @@ sm:text-[30px]            font-bold
             <div
              className="
   grid
+  w-full
   min-w-0
+  max-w-full
   grid-cols-1
   gap-4
   sm:grid-cols-2
@@ -1529,12 +1548,14 @@ sm:text-[30px]            font-bold
 
 
           {/* =================================================
-              CHRONIC WELLNESS / APPOINTMENT
+              پیگیری سلامت مزمن و نوبت‌ها
           ================================================= */}
 <div
   className="
     grid
+    w-full
     min-w-0
+    max-w-full
     grid-cols-1
     gap-4
     lg:grid-cols-2
@@ -1548,6 +1569,7 @@ sm:text-[30px]            font-bold
               <div
                 className="
                   h-[250px]
+                  w-full
                   min-w-0
                 "
               >
@@ -1670,6 +1692,7 @@ sm:text-[30px]            font-bold
               <div
                 className="
                   h-[250px]
+                  w-full
                   min-w-0
                 "
               >
@@ -1833,7 +1856,7 @@ sm:text-[30px]            font-bold
 
 
           {/* =================================================
-              MAP + APPOINTMENTS
+              نقشه و نوبت‌ها
           ================================================= */}
 
           <div
@@ -1875,7 +1898,7 @@ lg:grid-cols-[1fr_0.92fr]
 
 
           {/* =================================================
-              DOCTORS
+              بخش پزشکان
           ================================================= */}
 
           <DoctorsCard />
