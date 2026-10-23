@@ -10,6 +10,7 @@ import Settings from "../pages/settings/Settings";
 import MarketPlace from "../pages/marketPlace";
 import PharmacyPlace from "../pages/pharmacy/PharmacyPlace";
 import Layout from "../components/layouts/Layout";
+import MyDependents from "../pages/myDependents";
 
 function AppRouter() {
   return (
@@ -20,13 +21,11 @@ function AppRouter() {
           element={<Navigate to="/dashboard" replace />}
         />
 
-        {/* Dashboard already has Layout */}
         <Route
           path="/dashboard"
           element={<Dashboard />}
         />
 
-        {/* Pages that already have Layout */}
         <Route
           path="/appointment"
           element={<Appointment />}
@@ -37,7 +36,6 @@ function AppRouter() {
           element={<Chat />}
         />
 
-        {/* Pages using Layout here */}
         <Route
           path="/marketplace"
           element={
@@ -83,7 +81,15 @@ function AppRouter() {
           }
         />
 
-        {/* Redirect unknown routes */}
+        <Route
+          path="/dependents"
+          element={
+            <Layout>
+              <MyDependents />
+            </Layout>
+          }
+        />
+
         <Route
           path="*"
           element={<Navigate to="/dashboard" replace />}
