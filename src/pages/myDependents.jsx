@@ -1,4 +1,3 @@
-import React from "react";
 import "./MyDependents.css";
 
 function MyDependents() {
